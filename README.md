@@ -1,8 +1,4 @@
-# SpringDemoCRUD
-## url: http://localhost:8080/coffees
-1. GETting data from a data structure(no JPA)
-
-## url: http://localhost:8080/accounts
+#What does this project do?
 1. Accessing to MySQL database
 2. GET, POST, PUT, and DELETE request
 
