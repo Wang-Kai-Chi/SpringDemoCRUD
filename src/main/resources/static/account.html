@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+</head>
+<body>
+    <h2>用戶資訊:</h2>
+    <div>
+        <table id="account_table">
+            <tr>
+                <th>姓名</th>
+                <th>電話</th>
+                <th>生日</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        fetch("http://localhost:8080/accounts")
+            .then(data => data.json())
+            .then(value => addDataToTable(value))
+
+        function addDataToTable(data){
+            let rows = []
+
+            for(let i in data){
+                rows.push(account_table.insertRow())
+            }
+            
+            for(let i in rows){
+                let col = rows[i].insertCell()
+                col.innerHTML= data[i].name
+
+                let col1 = rows[i].insertCell()
+                col1.innerHTML = data[i].tel
+
+                let col2 = rows[i].insertCell()
+                col2.innerHTML= data[i].birthday
+            }
+            
+        }
+    </script>
+</body>
+</html>
